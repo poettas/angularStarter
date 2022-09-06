@@ -1,0 +1,29 @@
+<h2>Programming Books List!</h2>
+
+<!-- when you don't use property binding the vales we use through interpolation are always truthy. it can only be undone using the property binding 
+event binding is defined as watching for user triggered events, itsh working within ()="f()"
+before editing within the button: (click)="handleClick()" [disabled]="isDisabled" 
+
+<button (click)="isShowing = !isShowing">
+ng container makes sure, that only the conditionally used things are showing 
+  <ng-container *ngIf="!isShowing">Show Books</ng-container>
+  <ng-container *ngIf="isShowing">Hide Books</ng-container>
+</button>
+-->
+
+<!-- to connect the function and the inputValue, you need the two way binding "[()]" from the formsModule. in this way you are able to connect the
+the event directly to the inputValue   -->
+<!-- <input type="text" [(ngModel)]="inputValue" />    
+<div>{{ inputValue }}</div> -->
+
+<!-- for using the build in directives you have to initialize them with *ngIf e.g. -->
+<ul *ngIf="isShowing">
+  <!-- *ngFor iterate over an array and creates a map-method -->
+  <!-- create an cleaner way of writing html on using directives only on ng-containers -->
+  <ng-container *ngFor="let singleBook of books; let i = index">
+    <!-- to listen on a spefific event from a child, you have to pass it upwards with the output decorator in the child and use the emitter 
+  to trigger the event
+ (bookEmitter)="addToCart($event)"-->
+    <app-book [book]="singleBook"></app-book>
+  </ng-container>
+</ul>

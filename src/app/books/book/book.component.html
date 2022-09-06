@@ -1,0 +1,11 @@
+<li>
+  <img [src]="book.image" [alt]="book.author" width="100px" />
+  <!-- use pipes to transform specific data -->
+  <p class="title">
+    {{ book.name | titlecase }}
+  </p>
+  <p>by {{ book.author | titlecase }}</p>
+  <p class="currency">{{ book.amount | currency: "EUR" }}</p>
+  <button *ngIf="!isInCart" (click)="addToCart()">Add to Cart</button>
+  <button *ngIf="isInCart" (click)="removeFromCart()">Remove from Cart</button>
+</li>
