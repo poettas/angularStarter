@@ -1,11 +1,30 @@
-<li>
-  <img [src]="book.image" [alt]="book.author" width="100px" />
-  <!-- use pipes to transform specific data -->
-  <p class="title">
-    {{ book.name | titlecase }}
-  </p>
-  <p>by {{ book.author | titlecase }}</p>
-  <p class="currency">{{ book.amount | currency: "EUR" }}</p>
-  <button *ngIf="!isInCart" (click)="addToCart()">Add to Cart</button>
-  <button *ngIf="isInCart" (click)="removeFromCart()">Remove from Cart</button>
+<li class="flex border rounded-xl h-60">
+  <img
+    [src]="book.image"
+    [alt]="book.author"
+    class="m-auto rounded-sm"
+    width="100"
+  />
+  <div class="m-auto">
+    <!-- use pipes to transform specific data -->
+    <p class="text-lg">
+      {{ book.name | titlecase }}
+    </p>
+    <p class="text-lg">by {{ book.author | titlecase }}</p>
+    <p class="currency my-4">{{ book.amount | currency: "EUR" }}</p>
+    <button
+      class="bg-yellow-400 rounded p-3"
+      *ngIf="!isInCart"
+      (click)="addToCart()"
+    >
+      Add to Cart
+    </button>
+    <button
+      class="bg-yellow-400 rounded p-3"
+      *ngIf="isInCart"
+      (click)="removeFromCart()"
+    >
+      Remove from Cart
+    </button>
+  </div>
 </li>

@@ -21,14 +21,14 @@ export class BooksService {
         amount: 30,
       },
       {
-        name: "Clean Architecture: A Craftsman's Guide to Software Structure and Design",
+        name: 'Clean Architecture',
         author: 'robert c martin',
         image:
           'https://images-na.ssl-images-amazon.com/images/I/41-sN-mzwKL.jpg',
         amount: 15,
       },
       {
-        name: 'The Clean Coder: A Code of Conduct for Professional Programmers',
+        name: 'The Clean Coder',
         author: 'robert c martin',
         image:
           'https://images-na.ssl-images-amazon.com/images/I/51uO-K+V5dL.jpg',

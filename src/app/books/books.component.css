@@ -1,12 +1,13 @@
-ul {
+/* ul {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
-ul li {
+/* ul li {
   list-style: none;
   text-overflow: ellipsis;
   width: 25%;
   text-align: center;
   cursor: pointer;
 }
+ */
