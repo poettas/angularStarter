@@ -44,12 +44,14 @@
       Pasword must be valid
     </div>
     <div class="my-5">
-      <input
+      <button
         type="submit"
-        value="Submit"
         class="w-full p-2 rounded bg-purple-700 text-white hover:bg-purple-900"
         [disabled]="myForm.form.invalid"
-      />
+      >
+        <ng-container *ngIf="isLoading()">Loading...</ng-container>
+        <ng-container *ngIf="!isLoading()">Submit</ng-container>
+      </button>
     </div>
   </form>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginForm } from 'src/app/types/Auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +14,15 @@ export class LoginComponent implements OnInit {
     password: '',
   };
 
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 
   submit() {
-    console.log(this.form);
+    this.authService.login(this.form);
+  }
+
+  isLoading() {
+    return this.authService.isLoading;
   }
 }
